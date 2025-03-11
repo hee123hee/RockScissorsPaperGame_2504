@@ -1,5 +1,6 @@
 import './App.css';
 import {useState} from "react";
+import Box from "./component/Box";
 
 const choice = {
     rock: {
@@ -12,7 +13,7 @@ const choice = {
     },
     paper: {
         name: "Paper",
-        img: "https://www.google.com/imgres?q=paper&imgurl=https%3A%2F%2Fi.ebayimg.com%2Fimages%2Fg%2F7GIAAOSw8T9gVMP5%2Fs-l1200.jpg&imgrefurl=https%3A%2F%2Fwww.ebay.co.uk%2Fitm%2F264687300459&docid=SHrEZ9TP1rePZM&tbnid=Smyho8X2YzpMAM&vet=12ahUKEwil376_ooGMAxUqqVYBHbteNv8QM3oECH0QAA..i&w=1200&h=800&hcb=2&ved=2ahUKEwil376_ooGMAxUqqVYBHbteNv8QM3oECH0QAA ",
+        img: "https://www.google.com/imgres?q=paper&imgurl=https%3A%2F%2Fi.ebayimg.com%2Fimages%2Fg%2F7GIAAOSw8T9gVMP5%2Fs-l1200.jpg&imgrefurl=https%3A%2F%2Fwww.ebay.co.uk%2Fitm%2F264687300459&docid=SHrEZ9TP1rePZM&tbnid=Smyho8X2YzpMAM&vet=12ahUKEwil376_ooGMAxUqqVYBHbteNv8QM3oECH0QAA..i&w=1200&h=800&hcb=2&ved=2ahUKEwil376_ooGMAxUqqVYBHbteNv8QM3oECH0QAA",
     },
 };
 
@@ -20,12 +21,13 @@ const choice = {
 function App() {
     const [userSelect, setUserSelect] = useState(null)
     const [computerSelect, setComputerSelect] = useState(null)
-    const play = (useChoice) => {
-        setUserSelect(choice[useChoice])
+    const [result, setResult] = useState("")
+    const play = (userChoice) => {
+        setUserSelect(choice[userChoice])
         let computerChoice = randomChoice()
         setComputerSelect(computerChoice);
+        setResult (judgement(choice[userChoice], computerChoice))
     };
-
     const randomChoice = () => {
         let itemArray = Object.keys(choice); // 객체의 키값만 뽑아서 어레이로 만들어주는 함수
         console.log("item array", itemArray);
@@ -33,11 +35,26 @@ function App() {
         console.log("random Value", randomItem); // 해당 인덱스의 값을 리턴
     }
 
+
+    const judgement = (user, computer) => {
+        console.log("user",user, "computer",computer)
+
+        if (user.name === computer.name) {
+            return "tie";
+        }else if(user.name ==="Rock") return computer.name === " Scissors" ? "win" : "lose";
+        else if(user.name==="Scissors") return computer.name === "Paper" ? "win" : "lose";
+        else if (user.name === "Paper") return computer.name === "Rock" ? "win" : "lose";
+
+    }
+
+
+
+
     return (
         <div>
             <div className="main">
-                <Box title="You" item={userSelect} />
-                <Box title="Computer" item={computerSelect} />
+                <Box title="You" item={userSelect} result={result} />
+                <Box title="Computer" item={computerSelect} result={result} />
 
             </div>
             <div className="main">

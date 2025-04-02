@@ -1,0 +1,19 @@
+/*App.js*/
+.box{
+    border: 1px solid black;
+    width: 500px;
+}
+
+.item-img{
+    width: 400px;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+/*Box.jsx*/
+.box h1 h2 {
+
+}

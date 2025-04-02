@@ -1,4 +1,4 @@
-import '../../my-app/src/App';
+import "./App"
 import Box from "../src/component/Box.jsx";
 import {useState} from "react";
 import "./App.css"

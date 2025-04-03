@@ -1,0 +1,88 @@
+.Box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.game-icon-circle {
+    background-color: #fff;
+    width: 200px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
+    line-height: 200px;
+    box-sizing: border-box;
+}
+
+.Box h3 {
+    font-size: 50px;
+}
+.Box h4 {
+    font-size: 30px;
+}
+.Box h5 {
+    font-size: 20px;
+}
+.Box_WIN {
+    > .game-icon-circle {
+        background-color: #7cb651;
+    }
+    > h5 {
+        color: #7cb651;
+    }
+}
+
+.Box_LOSE {
+    > .game-icon-circle {
+        background-color: #d66256;
+    }
+    > h5 {
+        color: #d66256;
+    }
+}
+
+.Box_TIE {
+    > .game-icon-circle {
+        background-color: #ccc;
+    }
+}
+
+@media (max-width: 768px) {
+    .Box {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .game-icon-circle {
+        width: 150px;
+        font-size: 80px;
+        line-height: 150px;
+    }
+    .Box h3 {
+        font-size: 35px;
+    }
+    .Box h4 {
+        font-size: 20px;
+    }
+    .Box h5 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Box {
+        gap: 10px;
+    }
+    .game-icon-circle {
+        width: 120px;
+        font-size: 60px;
+        line-height: 120px;
+    }
+
+    .Box h3 {
+        font-size: 25px;
+    }
+}

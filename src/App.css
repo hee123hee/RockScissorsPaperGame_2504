@@ -1,19 +1,100 @@
-/*App.js*/
-.box{
-    border: 1px solid black;
-    width: 500px;
-}
-
-.item-img{
-    width: 400px;
-}
-
-.main{
+.container {
     display: flex;
-    justify-content: center;
-    padding: 2%;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 10px;
 }
-/*Box.jsx*/
-.box h1 h2 {
 
+.title {
+    text-align: center;
+}
+
+.title > h1 {
+    font-size: 60px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.title > p {
+    font-size: 30px;
+    letter-spacing: 1px;
+    color: #999;
+    font-weight: normal;
+}
+
+.container > .main {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+}
+
+.main h3.vs_text {
+    font-size: 30px;
+    color: rgb(236, 38, 38);
+}
+
+.reset_btn {
+    border: none;
+    background-color: #f1c3cb;
+    width: 360px;
+    height: 100px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    font-size: 50px;
+    line-height: 100px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.reset_btn:hover {
+    color: #fff;
+    background-color: black;
+}
+
+@media (max-width: 768px) {
+    .container {
+        gap: 30px;
+    }
+    .title > h1 {
+        font-size: 40px;
+    }
+
+    .title > p {
+        font-size: 20px;
+    }
+
+    .container > .main {
+        gap: 20px;
+    }
+
+    .main h3.vs_text {
+        font-size: 24px;
+    }
+
+    .reset_btn {
+        width: 90%;
+        height: 80px;
+        font-size: 36px;
+        line-height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        gap: 20px;
+    }
+    .title > h1 {
+        font-size: 30px;
+    }
+
+    .title > p {
+        font-size: 16px;
+    }
+
+    .reset_btn {
+        font-size: 30px;
+    }
 }
